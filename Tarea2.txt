@@ -1,0 +1,2 @@
+- Ingrese las propiedades TipoIdentificacion y Identificacion al mantenimiento de Empleados. 
+- Cree de forma nativa la administración de Tipos de Identificación en la solución Web.

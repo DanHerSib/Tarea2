@@ -15,5 +15,9 @@ namespace Entity
         public string SegundoApellido { get; set; }
         public int? Edad { get; set; }
         public DateTime FechaNacimiento { get; set; }
+
+        //Propiedades Tipo de identificacion
+        public string TipoIdentificacion { get; set; }
+        public string Identificacion { get; set; }
     }
 }

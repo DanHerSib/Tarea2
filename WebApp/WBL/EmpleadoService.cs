@@ -63,7 +63,6 @@ namespace WBL
 
                 throw;
             }
-
         }
 
         //Metodo Create
@@ -107,8 +106,6 @@ namespace WBL
                     entity.SegundoApellido,
                     entity.Edad,
                     entity.FechaNacimiento
-
-
                 });
 
                 return await result;

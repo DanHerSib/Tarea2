@@ -32,56 +32,37 @@ namespace WebApp.Pages.Empleado
                 {
                     Entity = await empleadoService.GetById(new() { IdEmpleado = id });
                 }
-
                 return Page();
             }
             catch (Exception ex)
             {
-
                 return Content(ex.Message);
             }
-        
-        
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-
             try
             {
                 //Metodo Actualizar
                 if (Entity.IdEmpleado.HasValue)
                 {
                     var result = await empleadoService.Update(Entity);
-
                     if (result.CodeError != 0) throw new Exception(result.MsgError);
                     TempData["Msg"] = "El registro se ha actualizado";
                 }
                 else
                 {
                     var result = await empleadoService.Create(Entity);
-
                     if (result.CodeError != 0) throw new Exception(result.MsgError);
                     TempData["Msg"] = "El registro se ha insertado";
                 }
-
                 return RedirectToPage("Grid");
             }
             catch (Exception ex)
             {
-
                 return Content(ex.Message);
             }
-        
-        
         }
-
-
-
-
-
-
-
-
     }
 }

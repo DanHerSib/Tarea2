@@ -11,11 +11,7 @@
                 CreateValidator(this.Formulario)
             }
         }
-
     );
 
     Formulario.$mount("#AppEdit")
-
-
-
 }

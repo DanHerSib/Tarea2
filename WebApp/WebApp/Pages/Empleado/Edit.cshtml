@@ -2,8 +2,6 @@
 @model WebApp.Pages.Empleado.EditModel
 @{
 }
-
-
 <div id="AppEdit" class="container">
     <div class="card">
         <div class="card-header">
@@ -44,20 +42,13 @@
                             @(Model.id.HasValue? "Actualizar": "Agregar")
                         </button>
                           </div>
-
                 </div>
-
             </form>
-
         </div>
     </div>
-
 </div>
 
 @section Scripts
 { 
-
     <script defer src="~/App/Empleado/Edit.js"></script>
-
-
 }

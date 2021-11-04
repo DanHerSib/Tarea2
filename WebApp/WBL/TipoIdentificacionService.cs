@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BD;
+﻿using BD;
 using Entity;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WBL
 {
@@ -13,7 +11,7 @@ namespace WBL
         Task<DBEntity> Create(TipoIdentificacionEntity entity);
         Task<DBEntity> Delete(TipoIdentificacionEntity entity);
         Task<IEnumerable<TipoIdentificacionEntity>> Get();
-        Task<EmpleadoEntity> GetById(TipoIdentificacionEntity entity);
+        Task<TipoIdentificacionEntity> GetById(TipoIdentificacionEntity entity);
         Task<DBEntity> Update(TipoIdentificacionEntity entity);
     }
     public class TipoIdentificacionService : ITipoIdentificacionService
@@ -46,7 +44,7 @@ namespace WBL
             try
             {
                 var result = sql.QueryFirstAsync<TipoIdentificacionEntity>("dbo.TipoIdentificacionObtener", new
-                {entity.IdTipoIdentificacion});
+                { entity.IdTipoIdentificacion });
                 return await result;
             }
             catch (Exception)
@@ -105,11 +103,6 @@ namespace WBL
             {
                 throw;
             }
-        }
-
-        Task<EmpleadoEntity> ITipoIdentificacionService.GetById(TipoIdentificacionEntity entity)
-        {
-            throw new NotImplementedException();
         }
         #endregion
     }

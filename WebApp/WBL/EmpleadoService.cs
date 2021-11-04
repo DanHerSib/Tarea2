@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BD;
+﻿using BD;
 using Entity;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WBL
 {
@@ -27,25 +25,18 @@ namespace WBL
         }
 
         #region MetodosCrud
-
         //Metodo Get
-
-
         public async Task<IEnumerable<EmpleadoEntity>> Get()
         {
             try
             {
                 var result = sql.QueryAsync<EmpleadoEntity>("exp.EmpleadoObtener");
-
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
-
-
         }
 
         //Metodo GetById
@@ -55,18 +46,15 @@ namespace WBL
             {
                 var result = sql.QueryFirstAsync<EmpleadoEntity>("exp.EmpleadoObtener", new
                 { entity.IdEmpleado });
-
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
         //Metodo Create
-
         public async Task<DBEntity> Create(EmpleadoEntity entity)
         {
             try
@@ -78,19 +66,13 @@ namespace WBL
                     entity.SegundoApellido,
                     entity.Edad,
                     entity.FechaNacimiento
-
-
-
                 });
-
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         //Metodo Update
@@ -107,15 +89,12 @@ namespace WBL
                     entity.Edad,
                     entity.FechaNacimiento
                 });
-
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         //Metodo Delete
@@ -126,29 +105,14 @@ namespace WBL
                 var result = sql.ExecuteAsync("exp.EmpleadoEliminar", new
                 {
                     entity.IdEmpleado,
-
-
-
                 });
-
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
-
-
-
-
-
-
         #endregion
-
-
-
     }
 }
